@@ -14,7 +14,7 @@ const HomePage = () => {
         </li>
         <li>
           <Link href="/about/team">About Team</Link>
-        </li>
+        </li> 
       </ul>
     </>
   );
