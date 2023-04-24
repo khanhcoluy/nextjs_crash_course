@@ -7,7 +7,12 @@ const fetchRepoDirs = async (name) => {
       setTimeout(resolve, 3000);
     });
     const response = await fetch(
-      `https://api.github.com/repos/khanhcoluy/${name}/contents`
+      `https://api.github.com/repos/khanhcoluy/${name}/contents`,
+      {
+        next: {
+          revalidate: 60,
+        },
+      }
     );
     const data = await response.json();
     return data;
