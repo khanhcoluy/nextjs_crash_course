@@ -6,13 +6,12 @@ import CourseSearch from './components/CourseSearch';
 import LoadingPage from './loading';
 
 const HomePage = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        setLoading(true);
         const res = await fetch('/api/courses');
         const data = await res.json();
         setCourses(data);
